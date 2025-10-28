@@ -2,273 +2,308 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Kokki — 5-DoF Humanoid Cooking Assistant</title>
-  <meta name="description" content="Kokki Humanoid Cooking Assistant - CMU-Africa Project">
-  <meta name="keywords" content="robotics, humanoid, cooking assistant, CMU-Africa">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Kokki — 5-DoF Humanoid Cooking Assistant</title>
+    <meta name="description" content="Kokki Humanoid Cooking Assistant - CMU-Africa Project">
+    <meta name="keywords" content="robotics, humanoid, cooking assistant, CMU-Africa">
 
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-    rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body class="project-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Add your logo here if needed -->
-      </a>
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <!-- Add your logo here if needed -->
+            </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="my_writings.html">My writings</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-    </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Header -->
-    <section class="project-header">
-      <div class="container" data-aos="fade-up">
-        <h1>Robot Kokki — A Humanoid Cooking Assistant</h1>
-        <p class="lead">Built at CMU-Africa in Prof. Conrad Tucker's Humanoid Robotics course. Our team designed, printed, and programmed a 5-DoF arm that helps cook Jollof—safely and repeatably.</p>
-      </div>
-    </section>
-
-    <!-- Hero Image -->
-    <section class="project-hero">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="hero-image">
-          <img src="assets/img/Robot Kokki.jpg" alt="Kokki Robot">
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="my_writings.html">My writings</a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <!-- Summary Section -->
-    <section class="project-summary">
-      <div class="container" data-aos="fade-up" data-aos-delay="200">
-        <div class="summary-box">
-          <h2>Summary</h2>
-          <ul>
-            <li>5-DoF arm + adaptive hand</li>
-            <li>Real-time object detection</li>
-            <li>SSC-32U control</li>
-            <li>Custom Inverse Kinematics (IK)</li>
-            <li>Calibration UI, and timed routines</li>
-          </ul>
+    <main class="main">
+
+        <!-- Header -->
+        <section class="project-header">
+            <div class="container" data-aos="fade-up">
+                <h1>Robot Kokki — A Humanoid Cooking Assistant</h1>
+                <p class="lead">Built at CMU-Africa in Prof. Conrad Tucker's Humanoid Robotics course. Our team
+                    designed, printed, and programmed a 5-DoF arm that helps cook Jollof—safely and repeatably.</p>
+            </div>
+        </section>
+
+        <!-- Hero Image -->
+        <section class="project-hero">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="hero-image">
+                    <img src="assets/img/Robot Kokki.jpg" alt="Kokki Robot">
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="project-summary">
+            <div class="container" data-aos="fade-up" data-aos-delay="200">
+                <div class="summary-box">
+                    <h2>Summary</h2>
+                    <ul>
+                        <li>5-DoF arm + adaptive hand</li>
+                        <li>Real-time object detection</li>
+                        <li>SSC-32U control</li>
+                        <li>Custom Inverse Kinematics (IK)</li>
+                        <li>Calibration UI, and timed routines</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interaction & Design Evolution -->
+        <section class="project-section">
+            <div class="container" data-aos="fade-up">
+                <h2>Interaction & Design Evolution</h2>
+                <p>We started with a simple handshake idea and evolved it into a true kitchen helper. Early sketches
+                    shaped how the arm should move around a stove, hold tools, and work with a person—reliably and
+                    safely. The design matured through quick CAD iterations and printed prototypes.</p>
+
+                <!-- Image Grid -->
+                <div class="image-grid">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="grid-image">
+                                <img src="assets/img/Robotic Arm 1.png" alt="Design Evolution - CAD Model">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="grid-image">
+                                <img src="assets/img/WhatsApp Image 2025-02-11 at 04.32.32_b61c352c.jpg"
+                                    alt="Design Evolution - Prototype">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="grid-image">
+                                <img src="assets/img/Robot Kokki -1.jpg" alt="Design Evolution - Final Build">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture -->
+        <section class="project-section light-bg">
+            <div class="container" data-aos="fade-up">
+                <h2>System Architecture</h2>
+                <p>Kokki links perception, planning, and motion into one loop. The detector spots tools and ingredients,
+                    the planner finds safe joint angles, and the controller executes smooth, timed moves—while a
+                    calibration UI keeps everything aligned.</p>
+
+                <!-- Two Column Images -->
+                <div class="row gy-4 mt-4">
+                    <div class="col-lg-6">
+                        <div class="section-image">
+                            <img src="assets/img/New.png" alt="System Architecture Diagram">
+                            <p class="image-caption">System Architecture Overview</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-image">
+                            <img src="assets/img/SIMULATION.png" alt="System Simulation">
+                            <p class="image-caption">3D Simulation Environment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demonstration Section -->
+        <section class="project-section video-section">
+            <div class="container" data-aos="fade-up">
+                <h2>Video Demonstration</h2>
+                <p>See Robot Kokki in action! This video shows the arm performing a complete cooking sequence, from
+                    picking up an ingredient to pouring it into the pot.</p>
+                <div class="video-container">
+                    <video class="project-video" controls poster="assets/img/Robot Kokki.jpg">
+                        <source src="assets/img/pick-and-drop.webm" type="video/webm">
+                        <source src="assets/img/pick-and-drop.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Demonstration Section -->
+        <section class="project-section video-section">
+            <div class="container" data-aos="fade-up">
+                <h2>Object Identification Demonstration</h2>
+                <p>This video demonstrates how the robot using Computer Vision knowledge, we managed to train the model
+                    to identify cooking tools and items we had to use for our demo</p>
+                <div class="video-container">
+                    <video class="project-video" controls poster="assets/img/YOLO.jpg">
+                        <source src="assets/img/object-detection.webm" type="video/webm">
+                        <source src="assets/img/object-detection.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hardware & Software -->
+        <section class="project-section two-column-section light-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="row gy-5">
+                    <div class="col-lg-6">
+                        <div class="column-content">
+                            <h3>Hardware</h3>
+                            <div class="section-image">
+                                <img src="assets/img/Hardware.jpg" alt="Hardware Components">
+                            </div>
+                            <p>Lightweight, modular, and affordable. We designed a 3D-printed arm with human-like reach,
+                                an adaptive hand for common kitchen objects, and a stable base that tolerates repeated
+                                motion around hot cookware.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="column-content">
+                            <h3>Software</h3>
+                            <div class="section-image">
+                                <img src="assets/img/System soft.jpg" alt="Software Interface">
+                            </div>
+                            <p>A calibration UI for joint limits, a custom IK solver for 5-DoF reach, and a motion layer
+                                that translates plans into smooth routines. Each step is tuned for kitchen tasks and
+                                easy re-use.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="project-features">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center mb-5">Key Features</h2>
+                <div class="row gy-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-eye"></i>
+                            </div>
+                            <h3>Object Detection</h3>
+                            <p>The system identifies ingredients and tools in real time, so Kokki can adapt to slightly
+                                different placements on the counter and around the stove.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-hand-index"></i>
+                            </div>
+                            <h3>Pick, Pour & Place</h3>
+                            <p>A staple routine: approach, grasp, pour to a target, then set the container down—cleanly.
+                                Timing, wrist orientation, and safe clearances keep the motion dependable.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h3>Safety First</h3>
+                            <p>Collision avoidance and emergency stop protocols ensure Kokki can work alongside humans
+                                without risk, even in a busy kitchen environment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="project-conclusion">
+            <div class="container" data-aos="fade-up">
+                <div class="conclusion-box">
+                    <h2>Conclusion</h2>
+                    <p>Kokki shows how a small, well-designed robot can safely share a kitchen with people—handling
+                        repeatable tasks without getting in the way. Next steps: stronger gripper joints, more robust
+                        tracking, and a growing recipe library.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Credit -->
+        <section class="project-team">
+            <div class="container" data-aos="fade-up">
+                <h3>Team Credit</h3>
+                <p>Built by <a href="https://www.linkedin.com/in/peng-boris-akebuon">Peng Boris Akebuon</a>,
+                    <a href="https://www.linkedin.com/in/joeltooni">Joel Adebayo</a>,
+                    <a href="https://www.linkedin.com/in/rutaremara-wilson">Rutaremara Wilson</a>, and
+                    <a href="https://www.linkedin.com/in/julius-kanneh-jr">Julius Aries Kanneh</a> — CMU-Africa,
+                    Humanoid Robotics (Instructor: Prof. Conrad Tucker).
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer" class="footer light-background">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row justify-content-center gy-4">
+                    <div class="col-lg-4 col-md-6 footer-about text-center">
+                        <h3>Contact Me</h3>
+                        <div class="social-links mt-3 d-flex justify-content-center">
+                            <a href="https://github.com/ruta-wilson"><i class="bi bi-github"></i></a>
+                            <a href="https://www.linkedin.com/in/rutaremara-wilson" target="_blank"><i
+                                    class="bi bi-linkedin"></i></a>
+                            <a href="mailto:rutaremarawilson@gmail.com"><i class="bi bi-envelope"></i></a>
+                        </div>
+                        <p class="mt-3">Kigali, Rwanda</p>
+                        <p><strong>Phone:</strong> +250780439418</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Interaction & Design Evolution -->
-    <section class="project-section">
-      <div class="container" data-aos="fade-up">
-        <h2>Interaction & Design Evolution</h2>
-        <p>We started with a simple handshake idea and evolved it into a true kitchen helper. Early sketches shaped how the arm should move around a stove, hold tools, and work with a person—reliably and safely. The design matured through quick CAD iterations and printed prototypes.</p>
-        
-        <!-- Image Grid -->
-        <div class="image-grid">
-          <div class="row gy-4">
-            <div class="col-lg-4 col-md-6">
-              <div class="grid-image">
-                <img src="assets/img/Robotic Arm 1.png" alt="Design Evolution - CAD Model">
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="grid-image">
-                <img src="assets/img/WhatsApp Image 2025-02-11 at 04.32.32_b61c352c.jpg" alt="Design Evolution - Prototype">
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <div class="grid-image">
-                <img src="assets/img/Robot Kokki -1.jpg" alt="Design Evolution - Final Build">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
 
-    <!-- System Architecture -->
-    <section class="project-section light-bg">
-      <div class="container" data-aos="fade-up">
-        <h2>System Architecture</h2>
-        <p>Kokki links perception, planning, and motion into one loop. The detector spots tools and ingredients, the planner finds safe joint angles, and the controller executes smooth, timed moves—while a calibration UI keeps everything aligned.</p>
-        
-        <!-- Two Column Images -->
-        <div class="row gy-4 mt-4">
-          <div class="col-lg-6">
-            <div class="section-image">
-              <img src="assets/img/New.png" alt="System Architecture Diagram">
-              <p class="image-caption">System Architecture Overview</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="section-image">
-              <img src="assets/img/SIMULATION.png" alt="System Simulation">
-              <p class="image-caption">3D Simulation Environment</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-    <!-- Video Demonstration Section -->
-    <section class="project-section video-section">
-      <div class="container" data-aos="fade-up">
-        <h2>Video Demonstration</h2>
-        <p>See Robot Kokki in action! This video shows the arm performing a complete cooking sequence, from picking up an ingredient to pouring it into the pot.</p>
-        <div class="video-container">
-          <video class="project-video" controls poster="assets/img/Robot Kokki.jpg">
-            <source src="assets/img/pick-and-drop.webm" type="video/webm">
-            <source src="assets/img/pick-and-drop.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </section>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
 
-    <!-- Hardware & Software -->
-    <section class="project-section two-column-section light-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="row gy-5">
-          <div class="col-lg-6">
-            <div class="column-content">
-              <h3>Hardware</h3>
-              <div class="section-image">
-                <img src="assets/img/Hardware.jpg" alt="Hardware Components">
-              </div>
-              <p>Lightweight, modular, and affordable. We designed a 3D-printed arm with human-like reach, an adaptive hand for common kitchen objects, and a stable base that tolerates repeated motion around hot cookware.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="column-content">
-              <h3>Software</h3>
-              <div class="section-image">
-                <img src="assets/img/System soft.jpg" alt="Software Interface">
-              </div>
-              <p>A calibration UI for joint limits, a custom IK solver for 5-DoF reach, and a motion layer that translates plans into smooth routines. Each step is tuned for kitchen tasks and easy re-use.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Feature Cards -->
-    <section class="project-features">
-      <div class="container" data-aos="fade-up">
-        <h2 class="text-center mb-5">Key Features</h2>
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="bi bi-eye"></i>
-              </div>
-              <h3>Object Detection</h3>
-              <p>The system identifies ingredients and tools in real time, so Kokki can adapt to slightly different placements on the counter and around the stove.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="bi bi-hand-index"></i>
-              </div>
-              <h3>Pick, Pour & Place</h3>
-              <p>A staple routine: approach, grasp, pour to a target, then set the container down—cleanly. Timing, wrist orientation, and safe clearances keep the motion dependable.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="bi bi-shield-check"></i>
-              </div>
-              <h3>Safety First</h3>
-              <p>Collision avoidance and emergency stop protocols ensure Kokki can work alongside humans without risk, even in a busy kitchen environment.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Conclusion -->
-    <section class="project-conclusion">
-      <div class="container" data-aos="fade-up">
-        <div class="conclusion-box">
-          <h2>Conclusion</h2>
-          <p>Kokki shows how a small, well-designed robot can safely share a kitchen with people—handling repeatable tasks without getting in the way. Next steps: stronger gripper joints, more robust tracking, and a growing recipe library.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team Credit -->
-    <section class="project-team">
-      <div class="container" data-aos="fade-up">
-        <h3>Team Credit</h3>
-        <p>Built by <a href="https://www.linkedin.com/in/peng-boris-akebuon">Peng Boris Akebuon</a>, 
-        <a href="https://www.linkedin.com/in/joeltooni">Joel Adebayo</a>, 
-        <a href="https://www.linkedin.com/in/rutaremara-wilson">Rutaremara Wilson</a>, and 
-        <a href="https://www.linkedin.com/in/julius-kanneh-jr">Julius Aries Kanneh</a> — CMU-Africa, Humanoid Robotics (Instructor: Prof. Conrad Tucker).</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer id="footer" class="footer light-background">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row justify-content-center gy-4">
-          <div class="col-lg-4 col-md-6 footer-about text-center">
-            <h3>Contact Me</h3>
-            <div class="social-links mt-3 d-flex justify-content-center">
-              <a href="https://github.com/ruta-wilson"><i class="bi bi-github"></i></a>
-              <a href="https://www.linkedin.com/in/rutaremara-wilson" target="_blank"><i class="bi bi-linkedin"></i></a>
-              <a href="mailto:rutaremarawilson@gmail.com"><i class="bi bi-envelope"></i></a>
-            </div>
-            <p class="mt-3">Kigali, Rwanda</p>
-            <p><strong>Phone:</strong> +250780439418</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
