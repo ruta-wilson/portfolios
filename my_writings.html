@@ -31,6 +31,82 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Reaction System Styles -->
+  <style>
+    .reaction-container {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px solid #e5e7eb;
+    }
+    
+    .reaction-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .reaction-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 15px;
+      background: white;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 80px;
+    }
+    
+    .reaction-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-color: #56b8e6;
+    }
+    
+    .reaction-btn.active {
+      border-color: #56b8e6;
+      background: rgba(86, 184, 230, 0.1);
+    }
+    
+    .reaction-btn i {
+      font-size: 24px;
+      margin-bottom: 5px;
+      color: #6b7280;
+      transition: color 0.3s ease;
+    }
+    
+    .reaction-btn.active i {
+      color: #56b8e6;
+    }
+    
+    .reaction-btn span {
+      font-size: 12px;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    
+    .reaction-count {
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+      margin-top: 3px;
+    }
+    
+    .reaction-btn.active .reaction-count {
+      color: #56b8e6;
+    }
+
+    .reaction-header {
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+  </style>
 </head>
 
 <body class="services-page">
@@ -76,45 +152,45 @@
 
         <div class="row gy-4">
 
-          <!-- First Writing Card -->
+          <!-- First Writing Card - Seeking God -->
           <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-book larger-icon" style="color: #f57813;"></i></div>
-            <div>
+            <div style="width: 100%;">
               <h4 class="title">Seeking God</h4>
               <p class="description">
                 <b>Here's What Stood Out to Me 👇</b><br><br>
 
                 Seeking God is the most important pursuit in life — not a casual curiosity but a wholehearted desire to
-                know, love, and obey the Creator. True fulfillment isn’t found in possessions or achievements, but in a
+                know, love, and obey the Creator. True fulfillment isn't found in possessions or achievements, but in a
                 genuine relationship with God.<br><br>
 
                 <strong>1️⃣ The Blessed Life — Psalm 119:1–2</strong><br>
-                “Blessed are those who seek Him with all their heart.” Here, <b>blessed</b> means lasting joy that comes
+                "Blessed are those who seek Him with all their heart." Here, <b>blessed</b> means lasting joy that comes
                 from walking with God. Seeking Him involves living by His Word. As <b>Proverbs 28:9</b> reminds us,
                 ignoring Scripture makes even our prayers detestable. God weighs our motives (<b>Proverbs 16:2</b>), so
                 true seekers align actions and intentions with His truth.<br><br>
 
                 <strong>2️⃣ Priorities of the Seeker — Matthew 6:25–34</strong><br>
-                Jesus teaches that worry cannot add a single hour to life. Instead, He commands: “<em>Seek first His
-                  kingdom and His righteousness</em>.” When we do, He provides all we need. Worry chokes spiritual
+                Jesus teaches that worry cannot add a single hour to life. Instead, He commands: "<em>Seek first His
+                  kingdom and His righteousness</em>." When we do, He provides all we need. Worry chokes spiritual
                 growth (<b>Mark 4:18–19</b>), but trust brings peace.<br><br>
 
-                <strong>3️⃣ God’s Appointed Time and Place — Acts 17:26–28</strong><br>
+                <strong>3️⃣ God's Appointed Time and Place — Acts 17:26–28</strong><br>
                 God determines when and where we live so that we might seek Him. Every divine encounter — a
                 conversation, a meeting, a moment of reflection — is part of His plan to draw us closer.<br><br>
 
                 <strong>4️⃣ God Also Seeks Us — John 4:23–24</strong><br>
-                As we seek God, He also seeks those who worship Him “in spirit and in truth.” To worship in spirit means
-                being led by the Holy Spirit (<b>John 6:63</b>); to worship in truth means aligning with God’s Word
+                As we seek God, He also seeks those who worship Him "in spirit and in truth." To worship in spirit means
+                being led by the Holy Spirit (<b>John 6:63</b>); to worship in truth means aligning with God's Word
                 (<b>John 17:17</b>). True worship offers our lives as living sacrifices (<b>Romans 12:1</b>).<br><br>
 
-                <strong>5️⃣ Growing Through God’s Word — Acts 17:10–12</strong><br>
+                <strong>5️⃣ Growing Through God's Word — Acts 17:10–12</strong><br>
                 The Bereans studied Scripture daily to confirm truth. Start with the <b>book of John</b> and use the
                 <b>SOAP method</b>:<br>
-                🔹 <b>S – Scripture:</b> Write the verse you’re studying.<br>
+                🔹 <b>S – Scripture:</b> Write the verse you're studying.<br>
                 🔹 <b>O – Observation:</b> Note what stands out.<br>
                 🔹 <b>A – Application:</b> Identify lessons to live by.<br>
-                🔹 <b>P – Practical:</b> Decide how you’ll apply it today.<br><br>
+                🔹 <b>P – Practical:</b> Decide how you'll apply it today.<br><br>
                 You can also use <b>SPECK</b> to discover:<br>
                 🟢 Sins to avoid<br>
                 🟢 Promises to claim<br>
@@ -122,32 +198,59 @@
                 🟢 Commands to obey<br>
                 🟢 Knowledge to gain<br><br>
 
-                <strong>6️⃣ God’s Plan for You — Jeremiah 29:11–14</strong><br>
-                God has a unique plan for every person — one filled with hope and purpose. “You will seek Me and find Me
-                when you seek Me with all your heart.” His plans unfold through patient, wholehearted pursuit, not fear
+                <strong>6️⃣ God's Plan for You — Jeremiah 29:11–14</strong><br>
+                God has a unique plan for every person — one filled with hope and purpose. "You will seek Me and find Me
+                when you seek Me with all your heart." His plans unfold through patient, wholehearted pursuit, not fear
                 or haste.<br><br>
 
                 <strong>7️⃣ Guidance on the Journey — Acts 8:26–39</strong><br>
                 Just as God guided Philip to the Ethiopian eunuch, He orchestrates divine moments for us too. The
-                eunuch’s humility, curiosity, and obedience show the joy that comes when one truly finds God.<br><br>
+                eunuch's humility, curiosity, and obedience show the joy that comes when one truly finds God.<br><br>
 
                 <strong>8️⃣ The Promise to Seekers — Matthew 7:7–8</strong><br>
-                “Ask, and it will be given to you; seek, and you will find.” Seeking God is never in vain — those who
+                "Ask, and it will be given to you; seek, and you will find." Seeking God is never in vain — those who
                 genuinely seek will surely find Him.<br><br>
 
                 <strong>💡 Final Thought</strong><br>
-                To seek God is to center your entire life on Him — your thoughts, choices, and desires. It’s a daily
-                journey of faith, obedience, and transformation. As you study His Word and walk in His ways, you’ll find
+                To seek God is to center your entire life on Him — your thoughts, choices, and desires. It's a daily
+                journey of faith, obedience, and transformation. As you study His Word and walk in His ways, you'll find
                 the peace and joy only He can give. Start today — open your Bible, begin with John, and apply the SOAP
-                method. Seek Him wholeheartedly, and you’ll discover that He’s been seeking you all along. 🙏
+                method. Seek Him wholeheartedly, and you'll discover that He's been seeking you all along. 🙏
               </p>
+
+              <!-- REACTION BUTTONS -->
+              <div class="reaction-container">
+                <p class="reaction-header">What do you think? 💭</p>
+                <div class="reaction-buttons">
+                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="helpful">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                    <span>Helpful</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="love">
+                    <i class="bi bi-heart"></i>
+                    <span>Love it</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="insightful">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Insightful</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="inspiring">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Inspiring</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- Second Writing Card -->
+          <!-- Second Writing Card - Strategies -->
           <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-lightbulb larger-icon" style="color: #56b8e6;"></i></div>
-            <div>
+            <div style="width: 100%;">
               <h4 class="title">How to Know if Your Strategies Are Actually Working</h4>
               <p class="description">
                 <b>Here's What Stood Out to Me 👇</b><br><br>
@@ -186,6 +289,33 @@
                 Strategic reflection ensures you're not just working hard, but working effectively toward
                 long-term success.
               </p>
+
+              <!-- REACTION BUTTONS -->
+              <div class="reaction-container">
+                <p class="reaction-header">What do you think? 💭</p>
+                <div class="reaction-buttons">
+                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="helpful">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                    <span>Helpful</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="love">
+                    <i class="bi bi-heart"></i>
+                    <span>Love it</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="insightful">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Insightful</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="inspiring">
+                    <i class="bi bi-graph-up-arrow"></i>
+                    <span>Inspiring</span>
+                    <div class="reaction-count">0</div>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -376,6 +506,105 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- REACTION SYSTEM JAVASCRIPT -->
+  <script>
+    // Reaction System - Using localStorage for regular website deployment
+    let reactions = {
+      'seeking-god': { helpful: 0, love: 0, insightful: 0, inspiring: 0 },
+      'strategies-working': { helpful: 0, love: 0, insightful: 0, inspiring: 0 }
+    };
+    
+    let userReactions = {
+      'seeking-god': null,
+      'strategies-working': null
+    };
+
+    // Load reactions from localStorage
+    function loadReactions() {
+      try {
+        // Load shared reaction counts
+        const storedReactions = localStorage.getItem('blog-reactions');
+        if (storedReactions) {
+          reactions = JSON.parse(storedReactions);
+        }
+        
+        // Load user's personal reactions
+        const storedUserReactions = localStorage.getItem('blog-user-reactions');
+        if (storedUserReactions) {
+          userReactions = JSON.parse(storedUserReactions);
+        }
+        
+        updateUI();
+      } catch (error) {
+        console.log('First time loading reactions');
+        updateUI();
+      }
+    }
+
+    // Update UI with current counts
+    function updateUI() {
+      document.querySelectorAll('.reaction-btn').forEach(btn => {
+        const writing = btn.dataset.writing;
+        const reaction = btn.dataset.reaction;
+        const count = reactions[writing][reaction];
+        
+        btn.querySelector('.reaction-count').textContent = count;
+        
+        // Highlight if user has reacted
+        if (userReactions[writing] === reaction) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+    }
+
+    // Handle reaction click
+    function handleReaction(writingId, reactionType) {
+      try {
+        const currentUserReaction = userReactions[writingId];
+
+        // If user already reacted with this type, remove it
+        if (currentUserReaction === reactionType) {
+          reactions[writingId][reactionType] = Math.max(0, reactions[writingId][reactionType] - 1);
+          userReactions[writingId] = null;
+        } else {
+          // Remove previous reaction if exists
+          if (currentUserReaction) {
+            reactions[writingId][currentUserReaction] = Math.max(0, reactions[writingId][currentUserReaction] - 1);
+          }
+          // Add new reaction
+          reactions[writingId][reactionType] += 1;
+          userReactions[writingId] = reactionType;
+        }
+
+        // Save to localStorage
+        localStorage.setItem('blog-reactions', JSON.stringify(reactions));
+        localStorage.setItem('blog-user-reactions', JSON.stringify(userReactions));
+
+        updateUI();
+      } catch (error) {
+        console.error('Error saving reaction:', error);
+        alert('Unable to save reaction. Please try again.');
+      }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load reactions on page load
+      loadReactions();
+
+      // Add click handlers to all reaction buttons
+      document.querySelectorAll('.reaction-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const writingId = this.dataset.writing;
+          const reactionType = this.dataset.reaction;
+          handleReaction(writingId, reactionType);
+        });
+      });
+    });
+  </script>
 
 </body>
 
