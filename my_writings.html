@@ -106,6 +106,85 @@
       margin-bottom: 10px;
       font-weight: 500;
     }
+
+    /* Style for the comment section */
+    .comment-section {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #e5e7eb;
+    }
+
+    .comment-section h5 {
+        font-size: 16px;
+        color: #6b7280;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .comment-section label {
+        display: block;
+        margin-bottom: 5px;
+        color: #374151;
+        font-size: 14px;
+    }
+
+    .comment-section input[type="text"],
+    .comment-section textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #374151;
+    }
+
+    .comment-section textarea {
+        resize: vertical;
+        height: 100px;
+    }
+
+    .comment-section button {
+        background-color: #56b8e6;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .comment-section button:hover {
+        background-color: #368dc2;
+    }
+
+    /* Styles for displayed comments */
+    .comments-display {
+      margin-top: 20px;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+    .comment-item {
+      background-color: #f9f9f9;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+    }
+    .comment-item strong {
+      color: #333;
+    }
+    .comment-item p {
+      margin: 5px 0 0;
+      color: #555;
+    }
+    .comment-item small {
+      color: #888;
+      font-size: 0.8em;
+      display: block;
+      margin-top: 5px;
+    }
   </style>
 </head>
 
@@ -165,7 +244,7 @@
                 genuine relationship with God.<br><br>
 
                 <strong>1️⃣ The Blessed Life — Psalm 119:1–2</strong><br>
-                "Blessed are those who seek Him with all their heart." Here, <b>blessed</b> means lasting joy that comes
+                "Blessed are those who seek Him with all their heart." Here, <b> blessed</b> means lasting joy that comes
                 from walking with God. Seeking Him involves living by His Word. As <b>Proverbs 28:9</b> reminds us,
                 ignoring Scripture makes even our prayers detestable. God weighs our motives (<b>Proverbs 16:2</b>), so
                 true seekers align actions and intentions with His truth.<br><br>
@@ -190,6 +269,7 @@
                 🔹 <b>S – Scripture:</b> Write the verse you're studying.<br>
                 🔹 <b>O – Observation:</b> Note what stands out.<br>
                 🔹 <b>A – Application:</b> Identify lessons to live by.<br>
+                🔹 <b>P – Practical:</b> Decide how you'll apply it today.<br>
                 🔹 <b>P – Practical:</b> Decide how you'll apply it today.<br><br>
                 You can also use <b>SPECK</b> to discover:<br>
                 🟢 Sins to avoid<br>
@@ -221,7 +301,7 @@
               <!-- REACTION BUTTONS -->
               <div class="reaction-container">
                 <p class="reaction-header">What do you think? 💭</p>
-                <div class="reaction-buttons">
+                <div class="reaction-buttons" id="reactions-seeking-god">
                   <button class="reaction-btn" data-writing="seeking-god" data-reaction="helpful">
                     <i class="bi bi-hand-thumbs-up"></i>
                     <span>Helpful</span>
@@ -244,6 +324,24 @@
                   </button>
                 </div>
               </div>
+
+              <!-- COMMENT SECTION -->
+              <div class="comment-section">
+                <h5>Leave a Comment</h5>
+                <label for="comment-name-seeking-god">Name:</label>
+                <input type="text" id="comment-name-seeking-god" placeholder="Your Name">
+
+                <label for="comment-text-seeking-god">Comment:</label>
+                <textarea id="comment-text-seeking-god" placeholder="Your Comment"></textarea>
+
+                <button class="submit-comment-btn" data-writing="seeking-god" type="submit">Submit Comment</button>
+
+                <div class="comments-display" id="comments-display-seeking-god">
+                  <h6>Previous Comments:</h6>
+                  <!-- Comments will be loaded here dynamically -->
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -293,7 +391,7 @@
               <!-- REACTION BUTTONS -->
               <div class="reaction-container">
                 <p class="reaction-header">What do you think? 💭</p>
-                <div class="reaction-buttons">
+                <div class="reaction-buttons" id="reactions-strategies-working">
                   <button class="reaction-btn" data-writing="strategies-working" data-reaction="helpful">
                     <i class="bi bi-hand-thumbs-up"></i>
                     <span>Helpful</span>
@@ -316,6 +414,24 @@
                   </button>
                 </div>
               </div>
+
+              <!-- COMMENT SECTION -->
+              <div class="comment-section">
+                <h5>Leave a Comment</h5>
+                <label for="comment-name-strategies-working">Name:</label>
+                <input type="text" id="comment-name-strategies-working" placeholder="Your Name">
+
+                <label for="comment-text-strategies-working">Comment:</label>
+                <textarea id="comment-text-strategies-working" placeholder="Your Comment"></textarea>
+
+                <button class="submit-comment-btn" data-writing="strategies-working" type="submit">Submit Comment</button>
+
+                <div class="comments-display" id="comments-display-strategies-working">
+                  <h6>Previous Comments:</h6>
+                  <!-- Comments will be loaded here dynamically -->
+                </div>
+              </div>
+
             </div>
           </div>
 
@@ -360,7 +476,7 @@
                       dictator.
 
                       The pigs gradually seize control, rewriting history, manipulating the other animals, and
-                      exploiting them
+                      exploring them
                       even more ruthlessly than Mr. Jones ever did. The seven commandments of Animalism are subtly
                       altered to
                       suit the pigs' selfish agenda. Animal Farm is a chilling allegory of the Russian Revolution,
@@ -507,101 +623,185 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- REACTION SYSTEM JAVASCRIPT -->
-  <script>
-    // Reaction System - Using localStorage for regular website deployment
-    let reactions = {
-      'seeking-god': { helpful: 0, love: 0, insightful: 0, inspiring: 0 },
-      'strategies-working': { helpful: 0, love: 0, insightful: 0, inspiring: 0 }
-    };
-    
-    let userReactions = {
-      'seeking-god': null,
-      'strategies-working': null
+  <!-- Firebase SDKs -->
+  <!-- Using compat versions for easier integration with global firebase object -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+  <!-- Firebase Initialization and Logic for Comments/Reactions -->
+  <script type="module">
+    // Firebase configuration from your project wilson-blog-ba03a
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY", // <<< IMPORTANT: Replace with your actual API Key from Firebase Console
+      authDomain: "wilson-blog-ba03a.firebaseapp.com",
+      databaseURL: "https://wilson-blog-ba03a-default-rtdb.firebaseio.com",
+      projectId: "wilson-blog-ba03a",
+      storageBucket: "wilson-blog-ba03a.appspot.com",
+      messagingSenderId: "544945940362",
+      appId: "YOUR_WEB_APP_ID", // <<< IMPORTANT: Replace with your actual Web App ID from Firebase Console
+      measurementId: "G-513124760" // Your Google Analytics Measurement ID
     };
 
-    // Load reactions from localStorage
-    function loadReactions() {
-      try {
-        // Load shared reaction counts
-        const storedReactions = localStorage.getItem('blog-reactions');
-        if (storedReactions) {
-          reactions = JSON.parse(storedReactions);
-        }
-        
-        // Load user's personal reactions
-        const storedUserReactions = localStorage.getItem('blog-user-reactions');
-        if (storedUserReactions) {
-          userReactions = JSON.parse(storedUserReactions);
-        }
-        
-        updateUI();
-      } catch (error) {
-        console.log('First time loading reactions');
-        updateUI();
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database(); // Get a reference to the database service
+
+    // --- Reaction System Logic ---
+    // Stores the user's last reaction for each post locally to manage UI and database transactions
+    let userReactions = JSON.parse(localStorage.getItem('blog-user-reactions')) || {};
+    
+    // Function to update a single reaction button's UI
+    function updateReactionButtonUI(btn, count, currentUserReactionForThisPost) {
+      const writingId = btn.dataset.writing;
+      const reactionType = btn.dataset.reaction;
+      
+      btn.querySelector('.reaction-count').textContent = count;
+      
+      if (currentUserReactionForThisPost && currentUserReactionForThisPost === reactionType) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
       }
     }
 
-    // Update UI with current counts
-    function updateUI() {
-      document.querySelectorAll('.reaction-btn').forEach(btn => {
-        const writing = btn.dataset.writing;
-        const reaction = btn.dataset.reaction;
-        const count = reactions[writing][reaction];
+    // Function to listen for and update reactions for a specific post in real-time
+    function setupReactionListener(writingId) {
+      const reactionsRef = database.ref(`reactions/${writingId}`);
+      reactionsRef.on('value', (snapshot) => {
+        const postReactions = snapshot.val() || {}; // e.g., { helpful: 10, love: 5, ... }
         
-        btn.querySelector('.reaction-count').textContent = count;
-        
-        // Highlight if user has reacted
-        if (userReactions[writing] === reaction) {
-          btn.classList.add('active');
-        } else {
-          btn.classList.remove('active');
-        }
+        // Update all reaction buttons for this post based on latest data
+        document.querySelectorAll(`.reaction-btn[data-writing="${writingId}"]`).forEach(btn => {
+          const reactionType = btn.dataset.reaction;
+          const count = postReactions[reactionType] || 0;
+          updateReactionButtonUI(btn, count, userReactions[writingId]); // Pass user's local reaction state
+        });
       });
     }
 
-    // Handle reaction click
+    // Handle reaction click logic
     function handleReaction(writingId, reactionType) {
-      try {
-        const currentUserReaction = userReactions[writingId];
+      const currentUserLocalReaction = userReactions[writingId];
+      const reactionRef = database.ref(`reactions/${writingId}/${reactionType}`);
 
-        // If user already reacted with this type, remove it
-        if (currentUserReaction === reactionType) {
-          reactions[writingId][reactionType] = Math.max(0, reactions[writingId][reactionType] - 1);
-          userReactions[writingId] = null;
+      // Use a transaction to safely increment/decrement reaction counts to avoid race conditions
+      reactionRef.transaction((currentCount) => {
+        currentCount = currentCount || 0; // Initialize if null
+
+        if (currentUserLocalReaction === reactionType) {
+          // User is un-reacting to the current reaction type
+          userReactions[writingId] = null; // Clear local reaction state
+          return currentCount - 1; // Decrement count
         } else {
-          // Remove previous reaction if exists
-          if (currentUserReaction) {
-            reactions[writingId][currentUserReaction] = Math.max(0, reactions[writingId][currentUserReaction] - 1);
+          // User is reacting with a new type OR changing their reaction
+          if (currentUserLocalReaction) {
+            // If they had a previous reaction, decrement its count first
+            const oldReactionRef = database.ref(`reactions/${writingId}/${currentUserLocalReaction}`);
+            oldReactionRef.transaction((oldCount) => {
+              return (oldCount || 0) - 1;
+            });
           }
-          // Add new reaction
-          reactions[writingId][reactionType] += 1;
-          userReactions[writingId] = reactionType;
+          userReactions[writingId] = reactionType; // Set new local reaction state
+          return currentCount + 1; // Increment count for the new reaction type
         }
-
-        // Save to localStorage
-        localStorage.setItem('blog-reactions', JSON.stringify(reactions));
+      })
+      .then(() => {
+        // Save the updated local reaction state to localStorage
         localStorage.setItem('blog-user-reactions', JSON.stringify(userReactions));
-
-        updateUI();
-      } catch (error) {
+      })
+      .catch((error) => {
         console.error('Error saving reaction:', error);
         alert('Unable to save reaction. Please try again.');
-      }
+      });
     }
 
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load reactions on page load
-      loadReactions();
+    // --- Comment System Logic ---
+    function setupCommentForm(writingId) {
+      const nameInput = document.getElementById(`comment-name-${writingId}`);
+      const commentTextInput = document.getElementById(`comment-text-${writingId}`);
+      const submitButton = document.querySelector(`.submit-comment-btn[data-writing="${writingId}"]`);
+      const commentsDisplay = document.getElementById(`comments-display-${writingId}`);
 
-      // Add click handlers to all reaction buttons
-      document.querySelectorAll('.reaction-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const writingId = this.dataset.writing;
-          const reactionType = this.dataset.reaction;
-          handleReaction(writingId, reactionType);
+      // Event listener for submitting a new comment
+      submitButton.addEventListener('click', () => {
+        const name = nameInput.value.trim();
+        const commentText = commentTextInput.value.trim();
+
+        if (name && commentText) {
+          const newComment = {
+            name: name,
+            comment: commentText,
+            timestamp: firebase.database.ServerValue.TIMESTAMP // Use server timestamp for consistency
+          };
+
+          // Push the new comment to the database
+          database.ref(`blogPosts/${writingId}/comments`).push(newComment)
+            .then(() => {
+              nameInput.value = ''; // Clear form fields
+              commentTextInput.value = '';
+              console.log('Comment added to Firebase successfully!');
+            })
+            .catch((error) => {
+              console.error('Error adding comment to Firebase:', error);
+              alert('Failed to submit comment. Please try again.');
+            });
+        } else {
+          alert('Please enter both your name and a comment.');
+        }
+      });
+      
+      // Real-time listener for new comments (child_added)
+      database.ref(`blogPosts/${writingId}/comments`).on('child_added', (snapshot) => {
+        const comment = snapshot.val();
+        // const commentId = snapshot.key; // Unique key generated by push()
+
+        const commentElement = document.createElement('div');
+        commentElement.classList.add('comment-item');
+        
+        // Format timestamp if available, otherwise display "just now" or similar
+        const date = comment.timestamp ? new Date(comment.timestamp).toLocaleString() : 'Just now';
+
+        commentElement.innerHTML = `
+          <strong>${comment.name}</strong>
+          <p>${comment.comment}</p>
+          <small>${date}</small>
+        `;
+        // Prepend new comments so they appear at the top
+        commentsDisplay.prepend(commentElement); // Changed from appendChild to prepend
+      });
+
+      // Optional: Listen for child_removed if you implement comment deletion
+      // database.ref(`blogPosts/${writingId}/comments`).on('child_removed', (snapshot) => {
+      //   const commentId = snapshot.key;
+      //   // Remove the corresponding commentElement from the DOM
+      //   const elementToRemove = commentsDisplay.querySelector(`[data-comment-id="${commentId}"]`);
+      //   if (elementToRemove) {
+      //     elementToRemove.remove();
+      //   }
+      // });
+    }
+
+    // Initialize all Firebase listeners and handlers on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Setup reactions for each writing
+      document.querySelectorAll('.reaction-buttons').forEach(container => {
+        // Extract writingId from the container's ID (e.g., "reactions-seeking-god" -> "seeking-god")
+        const writingId = container.id.replace('reactions-', '');
+        setupReactionListener(writingId); // Start listening for real-time reaction updates
+
+        // Add click handlers for each reaction button within this container
+        container.querySelectorAll('.reaction-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            handleReaction(writingId, this.dataset.reaction);
+          });
         });
+      });
+
+      // Setup comment forms and listeners for each writing
+      document.querySelectorAll('.service-item').forEach(serviceItem => {
+        // Find the writingId associated with this service item (from its reaction buttons)
+        const writingId = serviceItem.querySelector('.reaction-btn').dataset.writing;
+        setupCommentForm(writingId); // Configure comment submission and display for this post
       });
     });
   </script>
