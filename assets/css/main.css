@@ -728,12 +728,16 @@ section,
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+
   width: 100%;
-  min-height: 100vh;
-  padding: 180px 0 80px;
-  position: relative;
+  height: 100vh;              /* exact viewport height */
   display: flex;
-  align-items: center;
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+  padding: 0;                 /* remove extra padding */
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
 }
 
 #hero:before {
@@ -745,8 +749,8 @@ section,
 }
 
 #hero .container {
-  position: relative;
-  z-index: 2;
+  max-width: 900px;           /* keeps text readable */
+  text-align: center;         /* optional: center text */
 }
 
 #hero h1 {
