@@ -89,40 +89,48 @@
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+<section id="hero" class="hero section dark-background">
+  <div class="hero-split">
 
-      <!-- <img src="assets/img/Rutaremara Wilson.jpg" alt="" data-aos="fade-in" class="wilson-img"> -->
-
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-4">
-            <h1 data-aos="fade-up">RUTAREMARA Wilson</h1>
-            <blockquote data-aos="fade-up" data-aos-delay="100">
-              <!-- <h1>Hi, I'm <span class="highlight">Rutaremara Wilson</span></h1> -->
-              <p>A passionate IT professional, researcher and MSIT graduate student at Carnegie Mellon University
-                Africa. My expertise
-                spans key areas:</p>
-              <ul>
-                <li><strong>Cybersecurity:</strong> Specializing in VAPT, firewall configuration, and SOC management.
-                </li>
-                <li><strong>Cloud & Software Development:</strong> Experienced with AWS cloud infrastructure and
-                  full-stack
-                  development using Django and REST APIs.</li>
-                <li><strong>Research:</strong> Focused on innovative approaches to usable privacy & security, including
-                  gamified cybersecurity education.</li>
-              </ul>
-              <p>Driven by a desire to solve complex challenges, I strive to create impactful technology solutions that
-                prioritize security, usability, and innovation.</p>
-            </blockquote>
-
-          </div>
-        </div>
+    <!-- LEFT: Bio -->
+    <div class="hero-bio-col" data-aos="fade-right">
+      <div class="hero-eyebrow">
+        <div class="dot"></div>
+        <span>MSIT · Carnegie Mellon University Africa</span>
       </div>
+      <h1>Rutaremara <span>Wilson</span></h1>
+      <div class="hero-title-pill">IT Professional &amp; Security Researcher</div>
+      <div class="hero-divider"></div>
+      <p class="hero-bio">
+        A passionate IT professional specializing in cybersecurity, cloud infrastructure,
+        and full-stack development. Driven by a desire to solve complex challenges and
+        create impactful, secure technology solutions.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag hi">Cybersecurity</span>
+        <span class="hero-tag hi">VAPT</span>
+        <span class="hero-tag">AWS Cloud</span>
+        <span class="hero-tag">Django &amp; REST</span>
+        <span class="hero-tag">SOC / SIEM</span>
+        <span class="hero-tag">Research</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#recent-posts" class="btn-hero-primary">View my work →</a>
+        <a href="my_writings.html" class="btn-hero-ghost">Read writings</a>
+      </div>
+    </div>
 
-    </section><!-- /Hero Section -->
+    <!-- RIGHT: Photo -->
+    <div class="hero-photo-col" data-aos="fade-left" data-aos-delay="100">
+      <img src="assets/img/Rutaremara Wilson 1.jpg" alt="Rutaremara Wilson">
+      <div class="hero-photo-overlay"></div>
+    </div>
+
+  </div>
+</section>
 
     <!-- Why Us Section -->
-    <section id="why-us" class="why-us section">
+    <!-- <section id="why-us" class="why-us section">
 
       <div class="container">
 
@@ -181,7 +189,7 @@
 
       </div>
 
-    </section><!-- /Why Us Section -->
+    </section>/Why Us Section -->
 
 
 
@@ -513,3 +521,17 @@
 </body>
 
 </html>
+
+<script>
+  const hero = document.querySelector('#hero');
+
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      document.body.classList.remove('scrolled-past-hero');
+    } else {
+      document.body.classList.add('scrolled-past-hero');
+    }
+  }, { threshold: 0.1 });
+
+  observer.observe(hero);
+</script>
