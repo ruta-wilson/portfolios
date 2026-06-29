@@ -178,21 +178,14 @@ h6 {
 .scrolled .header {
   --background-color: rgba(23, 40, 59, 0.9);
 }
-/* Nav: left on hero, centered after scroll */
+/* Center the navigation bar */
 .header .container-fluid {
-  justify-content: flex-start;
-  padding-left: 5%;
-  transition: padding 0.4s ease;
+  justify-content: center !important;
 }
 
 .header .navmenu {
   display: flex;
   justify-content: center;
-}
-
-.scrolled-past-hero .header .container-fluid {
-  justify-content: center;
-  padding-left: 0;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
