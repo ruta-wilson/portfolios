@@ -31,161 +31,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- Reaction System Styles -->
-  <style>
-    .reaction-container {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 2px solid #e5e7eb;
-    }
-    
-    .reaction-buttons {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    .reaction-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 15px;
-      background: white;
-      border: 2px solid #e5e7eb;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      min-width: 80px;
-    }
-    
-    .reaction-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      border-color: #56b8e6;
-    }
-    
-    .reaction-btn.active {
-      border-color: #56b8e6;
-      background: rgba(86, 184, 230, 0.1);
-    }
-    
-    .reaction-btn i {
-      font-size: 24px;
-      margin-bottom: 5px;
-      color: #6b7280;
-      transition: color 0.3s ease;
-    }
-    
-    .reaction-btn.active i {
-      color: #56b8e6;
-    }
-    
-    .reaction-btn span {
-      font-size: 12px;
-      color: #6b7280;
-      font-weight: 500;
-    }
-    
-    .reaction-count {
-      font-size: 14px;
-      font-weight: 700;
-      color: #374151;
-      margin-top: 3px;
-    }
-    
-    .reaction-btn.active .reaction-count {
-      color: #56b8e6;
-    }
-
-    .reaction-header {
-      text-align: center;
-      font-size: 14px;
-      color: #6b7280;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    /* Style for the comment section */
-    .comment-section {
-        margin-top: 20px;
-        padding-top: 20px;
-        border-top: 2px solid #e5e7eb;
-    }
-
-    .comment-section h5 {
-        font-size: 16px;
-        color: #6b7280;
-        margin-bottom: 10px;
-        font-weight: 500;
-    }
-
-    .comment-section label {
-        display: block;
-        margin-bottom: 5px;
-        color: #374151;
-        font-size: 14px;
-    }
-
-    .comment-section input[type="text"],
-    .comment-section textarea {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 15px;
-        border: 1px solid #e5e7eb;
-        border-radius: 6px;
-        font-size: 14px;
-        color: #374151;
-    }
-
-    .comment-section textarea {
-        resize: vertical;
-        height: 100px;
-    }
-
-    .comment-section button {
-        background-color: #56b8e6;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: background-color 0.3s ease;
-    }
-
-    .comment-section button:hover {
-        background-color: #368dc2;
-    }
-
-    /* Styles for displayed comments */
-    .comments-display {
-      margin-top: 20px;
-      border-top: 1px solid #eee;
-      padding-top: 15px;
-    }
-    .comment-item {
-      background-color: #f9f9f9;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 10px 15px;
-      margin-bottom: 10px;
-    }
-    .comment-item strong {
-      color: #333;
-    }
-    .comment-item p {
-      margin: 5px 0 0;
-      color: #555;
-    }
-    .comment-item small {
-      color: #888;
-      font-size: 0.8em;
-      display: block;
-      margin-top: 5px;
-    }
-  </style>
 </head>
 
 <body class="services-page">
@@ -269,7 +114,6 @@
                 🔹 <b>S – Scripture:</b> Write the verse you're studying.<br>
                 🔹 <b>O – Observation:</b> Note what stands out.<br>
                 🔹 <b>A – Application:</b> Identify lessons to live by.<br>
-                🔹 <b>P – Practical:</b> Decide how you'll apply it today.<br>
                 🔹 <b>P – Practical:</b> Decide how you'll apply it today.<br><br>
                 You can also use <b>SPECK</b> to discover:<br>
                 🟢 Sins to avoid<br>
@@ -297,51 +141,6 @@
                 the peace and joy only He can give. Start today — open your Bible, begin with John, and apply the SOAP
                 method. Seek Him wholeheartedly, and you'll discover that He's been seeking you all along. 🙏
               </p>
-
-              <!-- REACTION BUTTONS -->
-              <div class="reaction-container">
-                <p class="reaction-header">What do you think? 💭</p>
-                <div class="reaction-buttons" id="reactions-seeking-god">
-                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="helpful">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                    <span>Helpful</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="love">
-                    <i class="bi bi-heart"></i>
-                    <span>Love it</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="insightful">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>Insightful</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="seeking-god" data-reaction="inspiring">
-                    <i class="bi bi-graph-up-arrow"></i>
-                    <span>Inspiring</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                </div>
-              </div>
-
-              <!-- COMMENT SECTION -->
-              <div class="comment-section">
-                <h5>Leave a Comment</h5>
-                <label for="comment-name-seeking-god">Name:</label>
-                <input type="text" id="comment-name-seeking-god" placeholder="Your Name">
-
-                <label for="comment-text-seeking-god">Comment:</label>
-                <textarea id="comment-text-seeking-god" placeholder="Your Comment"></textarea>
-
-                <button class="submit-comment-btn" data-writing="seeking-god" type="submit">Submit Comment</button>
-
-                <div class="comments-display" id="comments-display-seeking-god">
-                  <h6>Previous Comments:</h6>
-                  <!-- Comments will be loaded here dynamically -->
-                </div>
-              </div>
-
             </div>
           </div>
 
@@ -387,51 +186,75 @@
                 Strategic reflection ensures you're not just working hard, but working effectively toward
                 long-term success.
               </p>
+            </div>
+          </div>
 
-              <!-- REACTION BUTTONS -->
-              <div class="reaction-container">
-                <p class="reaction-header">What do you think? 💭</p>
-                <div class="reaction-buttons" id="reactions-strategies-working">
-                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="helpful">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                    <span>Helpful</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="love">
-                    <i class="bi bi-heart"></i>
-                    <span>Love it</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="insightful">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>Insightful</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                  <button class="reaction-btn" data-writing="strategies-working" data-reaction="inspiring">
-                    <i class="bi bi-graph-up-arrow"></i>
-                    <span>Inspiring</span>
-                    <div class="reaction-count">0</div>
-                  </button>
-                </div>
-              </div>
+          <!-- Third Writing Card - Discipline, Preparation, and the Meaning of Luck -->
+          <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-award larger-icon" style="color: #1f3c88;"></i></div>
+            <div style="width: 100%;">
+              <h4 class="title">Discipline, Preparation, and the Meaning of Luck</h4>
+              <p class="description">
+                <em>A personal reflection on success, purpose, and continuous growth</em><br><br>
 
-              <!-- COMMENT SECTION -->
-              <div class="comment-section">
-                <h5>Leave a Comment</h5>
-                <label for="comment-name-strategies-working">Name:</label>
-                <input type="text" id="comment-name-strategies-working" placeholder="Your Name">
+                <em>"I am a great believer in luck, and I find the harder I work, the more I have of it."</em>
+                — Thomas Jefferson<br><br>
 
-                <label for="comment-text-strategies-working">Comment:</label>
-                <textarea id="comment-text-strategies-working" placeholder="Your Comment"></textarea>
+                The older I get, the more I realize how true those words are.<br><br>
 
-                <button class="submit-comment-btn" data-writing="strategies-working" type="submit">Submit Comment</button>
+                People often describe success as luck. I see it differently. Luck rarely arrives uninvited—it
+                usually meets those who have spent years preparing for it.<br><br>
 
-                <div class="comments-display" id="comments-display-strategies-working">
-                  <h6>Previous Comments:</h6>
-                  <!-- Comments will be loaded here dynamically -->
-                </div>
-              </div>
+                The opportunities that changed my life did not appear out of nowhere. They became meaningful
+                because I had invested time in learning, improving, and staying ready. Hard work doesn't
+                guarantee success, but it dramatically increases the chances of recognizing and acting on
+                opportunities that others overlook.<br><br>
 
+                <em>"We must all suffer one of two things: the pain of discipline or the pain of regret.
+                Discipline weighs ounces while regret weighs tons."</em> — Jim Rohn<br><br>
+
+                Every meaningful goal demands a price. We either pay it through consistent effort today or
+                through regret tomorrow.<br><br>
+
+                Looking back, I can point to moments of failure, rejection, and delay. Some plans never
+                worked. Some goals took much longer than expected. There were times when the results did not
+                reflect the effort invested. Yet every challenge taught me something valuable, strengthened my
+                character, and reinforced the importance of persistence. Progress is rarely a straight line,
+                but it almost always rewards those who refuse to quit.<br><br>
+
+                <em>"We are what we repeatedly do. Excellence, then, is not an act but a habit."</em> —
+                Aristotle (commonly attributed)<br><br>
+
+                Excellence is not created by occasional bursts of effort. It is built through the small
+                decisions we make every day—the decision to learn one more thing, solve one more problem,
+                improve one more process, and become just a little better than yesterday.<br><br>
+
+                One of the greatest risks in any journey is complacency. The moment we believe we have
+                accomplished enough is often the moment we stop growing. Success should never become a
+                destination; it should become a platform from which we pursue even greater impact. There is
+                always another skill to master, another challenge to solve, and another opportunity to create
+                value.<br><br>
+
+                For me, work has never been only about earning a living. It is about contributing to something
+                larger than myself. Whether through technology, cybersecurity, research, or innovation, I want
+                my work to leave people safer, organizations stronger, and communities better than I found
+                them. That sense of purpose transforms effort into fulfillment.<br><br>
+
+                I've also come to believe that what many people call luck is often the visible result of
+                invisible preparation. They see the opportunity seized, but not the countless hours spent
+                learning, practicing, failing, adapting, and trying again. The years of discipline are hidden;
+                the results are not.<br><br>
+
+                At the end of the day, we all make a choice. We can embrace the temporary discomfort of
+                discipline or carry the lasting weight of wondering what might have been. I know which path I
+                want to follow.<br><br>
+
+                <b>If success eventually finds me, I hope people call it luck. I'll know it was years of
+                preparation, consistency, purpose, and perseverance that made that "luck" possible.</b><br><br>
+
+                <em>Discipline creates preparation. Preparation creates opportunity. Opportunity creates what
+                others call luck.</em>
+              </p>
             </div>
           </div>
 
@@ -622,189 +445,6 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
-  <!-- Firebase SDKs -->
-  <!-- Using compat versions for easier integration with global firebase object -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-
-  <!-- Firebase Initialization and Logic for Comments/Reactions -->
-  <script type="module">
-    // Firebase configuration from your project wilson-blog-ba03a
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY", // <<< IMPORTANT: Replace with your actual API Key from Firebase Console
-      authDomain: "wilson-blog-ba03a.firebaseapp.com",
-      databaseURL: "https://wilson-blog-ba03a-default-rtdb.firebaseio.com",
-      projectId: "wilson-blog-ba03a",
-      storageBucket: "wilson-blog-ba03a.appspot.com",
-      messagingSenderId: "544945940362",
-      appId: "YOUR_WEB_APP_ID", // <<< IMPORTANT: Replace with your actual Web App ID from Firebase Console
-      measurementId: "G-513124760" // Your Google Analytics Measurement ID
-    };
-
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const database = firebase.database(); // Get a reference to the database service
-
-    // --- Reaction System Logic ---
-    // Stores the user's last reaction for each post locally to manage UI and database transactions
-    let userReactions = JSON.parse(localStorage.getItem('blog-user-reactions')) || {};
-    
-    // Function to update a single reaction button's UI
-    function updateReactionButtonUI(btn, count, currentUserReactionForThisPost) {
-      const writingId = btn.dataset.writing;
-      const reactionType = btn.dataset.reaction;
-      
-      btn.querySelector('.reaction-count').textContent = count;
-      
-      if (currentUserReactionForThisPost && currentUserReactionForThisPost === reactionType) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    }
-
-    // Function to listen for and update reactions for a specific post in real-time
-    function setupReactionListener(writingId) {
-      const reactionsRef = database.ref(`reactions/${writingId}`);
-      reactionsRef.on('value', (snapshot) => {
-        const postReactions = snapshot.val() || {}; // e.g., { helpful: 10, love: 5, ... }
-        
-        // Update all reaction buttons for this post based on latest data
-        document.querySelectorAll(`.reaction-btn[data-writing="${writingId}"]`).forEach(btn => {
-          const reactionType = btn.dataset.reaction;
-          const count = postReactions[reactionType] || 0;
-          updateReactionButtonUI(btn, count, userReactions[writingId]); // Pass user's local reaction state
-        });
-      });
-    }
-
-    // Handle reaction click logic
-    function handleReaction(writingId, reactionType) {
-      const currentUserLocalReaction = userReactions[writingId];
-      const reactionRef = database.ref(`reactions/${writingId}/${reactionType}`);
-
-      // Use a transaction to safely increment/decrement reaction counts to avoid race conditions
-      reactionRef.transaction((currentCount) => {
-        currentCount = currentCount || 0; // Initialize if null
-
-        if (currentUserLocalReaction === reactionType) {
-          // User is un-reacting to the current reaction type
-          userReactions[writingId] = null; // Clear local reaction state
-          return currentCount - 1; // Decrement count
-        } else {
-          // User is reacting with a new type OR changing their reaction
-          if (currentUserLocalReaction) {
-            // If they had a previous reaction, decrement its count first
-            const oldReactionRef = database.ref(`reactions/${writingId}/${currentUserLocalReaction}`);
-            oldReactionRef.transaction((oldCount) => {
-              return (oldCount || 0) - 1;
-            });
-          }
-          userReactions[writingId] = reactionType; // Set new local reaction state
-          return currentCount + 1; // Increment count for the new reaction type
-        }
-      })
-      .then(() => {
-        // Save the updated local reaction state to localStorage
-        localStorage.setItem('blog-user-reactions', JSON.stringify(userReactions));
-      })
-      .catch((error) => {
-        console.error('Error saving reaction:', error);
-        alert('Unable to save reaction. Please try again.');
-      });
-    }
-
-    // --- Comment System Logic ---
-    function setupCommentForm(writingId) {
-      const nameInput = document.getElementById(`comment-name-${writingId}`);
-      const commentTextInput = document.getElementById(`comment-text-${writingId}`);
-      const submitButton = document.querySelector(`.submit-comment-btn[data-writing="${writingId}"]`);
-      const commentsDisplay = document.getElementById(`comments-display-${writingId}`);
-
-      // Event listener for submitting a new comment
-      submitButton.addEventListener('click', () => {
-        const name = nameInput.value.trim();
-        const commentText = commentTextInput.value.trim();
-
-        if (name && commentText) {
-          const newComment = {
-            name: name,
-            comment: commentText,
-            timestamp: firebase.database.ServerValue.TIMESTAMP // Use server timestamp for consistency
-          };
-
-          // Push the new comment to the database
-          database.ref(`blogPosts/${writingId}/comments`).push(newComment)
-            .then(() => {
-              nameInput.value = ''; // Clear form fields
-              commentTextInput.value = '';
-              console.log('Comment added to Firebase successfully!');
-            })
-            .catch((error) => {
-              console.error('Error adding comment to Firebase:', error);
-              alert('Failed to submit comment. Please try again.');
-            });
-        } else {
-          alert('Please enter both your name and a comment.');
-        }
-      });
-      
-      // Real-time listener for new comments (child_added)
-      database.ref(`blogPosts/${writingId}/comments`).on('child_added', (snapshot) => {
-        const comment = snapshot.val();
-        // const commentId = snapshot.key; // Unique key generated by push()
-
-        const commentElement = document.createElement('div');
-        commentElement.classList.add('comment-item');
-        
-        // Format timestamp if available, otherwise display "just now" or similar
-        const date = comment.timestamp ? new Date(comment.timestamp).toLocaleString() : 'Just now';
-
-        commentElement.innerHTML = `
-          <strong>${comment.name}</strong>
-          <p>${comment.comment}</p>
-          <small>${date}</small>
-        `;
-        // Prepend new comments so they appear at the top
-        commentsDisplay.prepend(commentElement); // Changed from appendChild to prepend
-      });
-
-      // Optional: Listen for child_removed if you implement comment deletion
-      // database.ref(`blogPosts/${writingId}/comments`).on('child_removed', (snapshot) => {
-      //   const commentId = snapshot.key;
-      //   // Remove the corresponding commentElement from the DOM
-      //   const elementToRemove = commentsDisplay.querySelector(`[data-comment-id="${commentId}"]`);
-      //   if (elementToRemove) {
-      //     elementToRemove.remove();
-      //   }
-      // });
-    }
-
-    // Initialize all Firebase listeners and handlers on DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Setup reactions for each writing
-      document.querySelectorAll('.reaction-buttons').forEach(container => {
-        // Extract writingId from the container's ID (e.g., "reactions-seeking-god" -> "seeking-god")
-        const writingId = container.id.replace('reactions-', '');
-        setupReactionListener(writingId); // Start listening for real-time reaction updates
-
-        // Add click handlers for each reaction button within this container
-        container.querySelectorAll('.reaction-btn').forEach(btn => {
-          btn.addEventListener('click', function() {
-            handleReaction(writingId, this.dataset.reaction);
-          });
-        });
-      });
-
-      // Setup comment forms and listeners for each writing
-      document.querySelectorAll('.service-item').forEach(serviceItem => {
-        // Find the writingId associated with this service item (from its reaction buttons)
-        const writingId = serviceItem.querySelector('.reaction-btn').dataset.writing;
-        setupCommentForm(writingId); // Configure comment submission and display for this post
-      });
-    });
-  </script>
 
 </body>
 
