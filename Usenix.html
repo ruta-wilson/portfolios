@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicons -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Mobile Money Payment Confirmation | USENIX Security '26</title>
+
+    <meta name="description"
+        content="Research on Mobile Money payment-confirmation interfaces in Rwanda, presented at the 35th USENIX Security Symposium.">
+
+    <style>
+        :root {
+            --bg: #f7f8fa;
+            --surface: #ffffff;
+            --text: #17202a;
+            --muted: #667085;
+            --primary: #173b67;
+            --primary-dark: #0e2949;
+            --gold: #c9972b;
+            --gold-light: #f7ecd0;
+            --border: #e5e7eb;
+            --success: #176b4d;
+            --shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1180px;
+            margin: auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #475467;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(135deg,
+                    var(--primary-dark),
+                    var(--primary));
+            color: white;
+            padding: 95px 24px 90px;
+        }
+
+        .hero-container {
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge.award {
+            background: var(--gold);
+            color: #17202a;
+            border-color: var(--gold);
+        }
+
+        .hero h1 {
+            max-width: 950px;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -2.5px;
+            margin-bottom: 28px;
+
+            color: var(--gold);
+            /* or any accent you prefer */
+        }
+
+
+
+        .hero-description {
+            max-width: 820px;
+            font-size: 20px;
+            line-height: 1.7;
+            color: #dbe6f2;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 21px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* =========================
+           AWARD
+        ========================= */
+
+        .award-section {
+            margin-top: -45px;
+            position: relative;
+            z-index: 2;
+            padding: 0 24px;
+        }
+
+        .award-card {
+            max-width: 1000px;
+            margin: auto;
+            background: var(--surface);
+            border-radius: var(--radius);
+            padding: 38px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .award-icon {
+            width: 75px;
+            height: 75px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+        }
+
+        .award-card h2 {
+            font-size: 23px;
+            margin-bottom: 6px;
+            color: var(--primary);
+        }
+
+        .award-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 90px 24px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        .section-label {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        h2.section-title {
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+            color: var(--primary);
+        }
+
+        .lead {
+            font-size: 19px;
+            color: #475467;
+            max-width: 850px;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: #475467;
+        }
+
+        .highlight-box {
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius);
+            padding: 32px;
+        }
+
+        .highlight-box h3 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: #dce7f3;
+        }
+
+        /* =========================
+           STATS
+        ========================= */
+
+        .stats-section {
+            background: white;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .stat {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            background: #fff;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 30px;
+            font-weight: 850;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* =========================
+           RESEARCH JOURNEY
+        ========================= */
+
+        .timeline {
+            margin-top: 45px;
+            border-left: 2px solid #d7dee8;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -45px;
+            top: 5px;
+            width: 17px;
+            height: 17px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--bg);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary);
+            margin-bottom: 6px;
+            font-size: 20px;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           FINDINGS
+        ========================= */
+
+        .findings-section {
+            background: white;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 30px;
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-number {
+            color: var(--gold);
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+
+            color: var(--gold);
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* =========================
+           USENIX
+        ========================= */
+
+        .conference {
+            background: var(--primary);
+            color: white;
+        }
+
+        .conference .section-label {
+            color: #e8bd57;
+        }
+
+        .conference h2 {
+            color: white;
+        }
+
+        .conference .lead {
+            color: #dbe6f2;
+        }
+
+        .conference-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .conference-box {
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .conference-box h3 {
+            margin-bottom: 12px;
+        }
+
+        .conference-box p {
+            color: #dbe6f2;
+        }
+
+        /* =========================
+           CMU
+        ========================= */
+
+        .cmu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .cmu-card {
+            padding: 32px;
+            border-radius: var(--radius);
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .cmu-card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .cmu-card p {
+            color: var(--muted);
+        }
+
+        .cmu-number {
+            font-size: 44px;
+            font-weight: 900;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+
+        /* =========================
+           TEAM
+        ========================= */
+
+        .team-section {
+            background: #f1f4f7;
+        }
+
+        .team-intro {
+            max-width: 800px;
+            color: var(--muted);
+            margin-bottom: 35px;
+        }
+
+        .mentor-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 35px;
+            border: 1px solid var(--border);
+            margin-bottom: 25px;
+        }
+
+        .mentor-card h3 {
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .mentor-card p {
+            color: var(--muted);
+        }
+
+        /* =========================
+           REFLECTION
+        ========================= */
+
+        .reflection {
+            background: white;
+        }
+
+        .reflection-box {
+            max-width: 850px;
+            padding: 45px;
+            background: #f8fafc;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .reflection-box p {
+            font-size: 18px;
+            color: #475467;
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            border-left: 4px solid var(--gold);
+            padding-left: 25px;
+            font-size: 23px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 30px 0;
+        }
+
+        /* =========================
+           RESOURCES
+        ========================= */
+
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 35px;
+        }
+
+        .resource {
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 25px;
+            background: white;
+            transition: 0.2s;
+        }
+
+        .resource:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .resource-icon {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .resource h3 {
+            color: var(--primary);
+            font-size: 17px;
+            margin-bottom: 6px;
+        }
+
+        .resource p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #0b2038;
+            color: white;
+            padding: 55px 24px;
+        }
+
+        .footer-container {
+            max-width: 1050px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        footer p {
+            color: #aebdcd;
+            font-size: 14px;
+        }
+
+        .footer-title {
+            font-weight: 800;
+            margin-bottom: 7px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid,
+            .conference-content,
+            .cmu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .resources {
+                grid-template-columns: 1fr;
+            }
+
+            .award-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .reflection-box {
+                padding: 28px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+     NAVIGATION
+========================= -->
+
+    <nav>
+        <div class="nav-container">
+            <nav>
+                <div class="nav-container">
+
+                    <div class="nav-links">
+                        <ul style="display: flex; list-style: none; gap: 24px; margin: 0; padding: 0;">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="services.html" class="active">My writings</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="nav-container">
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#findings">Findings</a>
+            <a href="#usenix">USENIX</a>
+            <a href="#team">Team</a>
+            <a href="#reflection">Reflection</a>
+            <a href="#resources">Resources</a>
+        </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <header class="hero">
+
+        <div class="hero-container">
+
+            <div class="badge-row">
+
+                <span class="badge">
+                    USENIX Security '26
+                </span>
+
+                <span class="badge">
+                    Cycle 2
+                </span>
+
+                <span class="badge award">
+                    🏆 Distinguished Paper Award
+                </span>
+
+            </div>
+
+            <!-- Replace this with the exact paper title -->
+            <h1>
+                Improving Mobile Money Payment-Confirmation Interfaces
+            </h1>
+
+            <p class="hero-description">
+
+                Understanding how merchants verify Mobile Money payments
+                in Rwanda and exploring opportunities to make payment
+                confirmation safer, more usable, and more privacy-conscious.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <!-- Replace # with your actual paper URL -->
+                <a href="https://www.blaseur.com/papers/sec26-momo.pdf" class="btn btn-primary" target="_blank">
+                    📄 Read the Paper
+                </a>
+                <a href="./assets/img/poster-payment-confirmation.pdf" class="btn btn-primary" target="_blank">
+                    📄 Our poster
+                </a>
+
+                <a href="#research" class="btn btn-outline">
+                    Explore the Research
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+     AWARD
+========================= -->
+
+    <div class="award-section">
+
+        <div class="award-card">
+
+            <div class="award-icon">
+                🏆
+            </div>
+
+            <div>
+
+                <h2>
+                    Distinguished Paper Award
+                </h2>
+
+                <p>
+                    Our paper was honored with a Distinguished Paper Award
+                    at the 35th USENIX Security Symposium.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+     INTRODUCTION
+========================= -->
+
+    <section id="research">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <div class="section-label">
+                        The Research
+                    </div>
+
+                    <h2 class="section-title">
+                        A security problem hiding in an everyday interaction
+                    </h2>
+
+                    <p>
+                        Mobile Money has become an important part of everyday
+                        financial life in Rwanda. Merchants frequently need to
+                        verify whether a customer's payment has actually been
+                        completed.
+                    </p>
+
+                    <p>
+                        In many situations, merchants rely on the customer's
+                        phone or payment confirmation to make this decision.
+                        What appears to be a simple interaction raises important
+                        questions about security, privacy, trust, and usability.
+                    </p>
+
+                    <p>
+                        Our research investigates these real-world payment
+                        confirmation practices and explores how these interactions
+                        can be improved.
+                    </p>
+
+                </div>
+
+
+                <div class="highlight-box">
+
+                    <h1>
+                        Why Rwanda?
+                    </h1>
+
+                    <p>
+                        Some of the most interesting cybersecurity questions
+                        emerge from the technologies people use every day.
+                        By studying Mobile Money practices in Rwanda, we can
+                        better understand security challenges in a context
+                        that is often underrepresented in the global security
+                        literature.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     STATS
+========================= -->
+
+    <section class="stats-section">
+
+        <div class="container">
+
+            <div class="section-label">
+                At a Glance
+            </div>
+
+            <h2 class="section-title">
+                From Rwanda to a global security venue
+            </h2>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span class="stat-number">
+                        35th
+                    </span>
+                    <span class="stat-label">
+                        USENIX Security Symposium
+                    </span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">
+                        '26
+                    </span>
+                    <span class="stat-label">
+                        USENIX Security cycle
+                    </span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">
+                        🏆
+                    </span>
+                    <span class="stat-label">
+                        Distinguished Paper Award
+                    </span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">
+                        🇷🇼
+                    </span>
+                    <span class="stat-label">
+                        Research grounded in Rwanda
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     RESEARCH JOURNEY
+========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-label">
+                The Journey
+            </div>
+
+            <h2 class="section-title">
+                From an everyday observation to USENIX Security
+            </h2>
+
+            <p class="lead">
+                The journey was much more than writing a paper. It involved
+                understanding real users, questioning assumptions, iterating
+                on ideas, and learning how to communicate research clearly.
+            </p>
+
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <h3>
+                        01 — Identify the problem
+                    </h3>
+
+                    <p>
+                        We started by examining how merchants and customers
+                        actually interact when verifying Mobile Money payments.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        02 — Listen to users
+                    </h3>
+
+                    <p>
+                        We engaged with people in real-world settings to
+                        understand their experiences, practices, challenges,
+                        and expectations.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        03 — Analyze the evidence
+                    </h3>
+
+                    <p>
+                        Instead of relying on assumptions, we used the evidence
+                        collected through the research to understand the problem.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        04 — Develop and refine our ideas
+                    </h3>
+
+                    <p>
+                        We explored how payment-confirmation experiences could
+                        be improved while keeping usability and real-world
+                        constraints in mind.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        05 — Write, revise, and submit
+                    </h3>
+
+                    <p>
+                        The work went through many rounds of writing, discussion,
+                        feedback, revision, and refinement.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        06 — USENIX Security '26
+                    </h3>
+
+                    <p>
+                        The research was accepted to the 35th USENIX Security
+                        Symposium and later received a Distinguished Paper Award.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     KEY FINDINGS
+========================= -->
+
+    <section id="findings" class="findings-section">
+
+        <div class="container">
+
+            <div class="section-label">
+                What We Learned
+            </div>
+
+            <h2 class="section-title">
+                Security is more than technology
+            </h2>
+
+            <p class="lead">
+                One of the biggest lessons from this research was that secure
+                systems must account for the people who use them and the
+                environments in which they operate.
+            </p>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Real-world workflows matter
+                    </h3>
+
+                    <p>
+                        Security mechanisms need to fit the practical realities
+                        of the people using them.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Assumptions are not evidence
+                    </h3>
+
+                    <p>
+                        Research requires listening carefully and allowing
+                        evidence to challenge what we initially believe.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Usability is security
+                    </h3>
+
+                    <p>
+                        A security mechanism is less effective when it is too
+                        difficult or disruptive for people to use.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Context matters
+                    </h3>
+
+                    <p>
+                        Security challenges can look very different depending
+                        on the social and technological environment.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Research is iterative
+                    </h3>
+
+                    <p>
+                        Good research evolves through questioning, feedback,
+                        experimentation, and repeated refinement.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        06
+                    </div>
+
+                    <h3>
+                        People are at the center
+                    </h3>
+
+                    <p>
+                        Ultimately, cybersecurity is about protecting people,
+                        their information, their money, and their trust.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     USENIX SECTION
+========================= -->
+
+    <section id="usenix" class="conference">
+
+        <div class="container">
+
+            <div class="section-label">
+                USENIX Security '26
+            </div>
+
+            <h2 class="section-title">
+                From Rwanda to one of the world's leading security venues
+            </h2>
+
+            <p class="lead">
+                Having the opportunity to present this research at the 35th
+                USENIX Security Symposium was one of the most meaningful
+                milestones in this research journey.
+            </p>
+
+
+            <div class="conference-content">
+
+                <div class="conference-box">
+
+                    <h3>
+                        🏆 Distinguished Paper Award
+                    </h3>
+
+                    <p>
+                        Our work was recognized with a Distinguished Paper Award.
+                        For our team, this recognition was a powerful reminder
+                        that research grounded in everyday experiences in Rwanda
+                        can contribute to the global cybersecurity community.
+                    </p>
+
+                </div>
+
+
+                <div class="conference-box">
+
+                    <h3>
+                        🌍 Representation Matters
+                    </h3>
+
+                    <p>
+                        The research also gave us an opportunity to bring an
+                        African perspective to conversations around usable
+                        security, privacy, and digital financial technologies.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     CMU / CYLAB
+========================= -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-label">
+                Carnegie Mellon University
+            </div>
+
+            <h2 class="section-title">
+                Being part of the CMU security research community
+            </h2>
+
+            <p class="lead">
+                The USENIX Security Symposium also provided an opportunity to
+                see the breadth of cybersecurity research coming from Carnegie
+                Mellon University.
+            </p>
+
+
+            <div class="cmu-grid">
+
+                <div class="cmu-card">
+
+                    <div class="cmu-number">
+                        10
+                    </div>
+
+                    <h3>
+                        CMU / CyLab papers
+                    </h3>
+
+                    <p>
+                        Carnegie Mellon's CyLab security and privacy research
+                        community had approximately ten papers represented at
+                        the symposium.
+                    </p>
+
+                </div>
+
+
+                <div class="cmu-card">
+
+                    <div class="cmu-number">
+                        1
+                    </div>
+
+                    <h3>
+                        CMU-Africa paper
+                    </h3>
+
+                    <p>
+                        Among that broader CMU presence, one paper represented
+                        CMU-Africa. Being part of that representation made this
+                        achievement particularly meaningful.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     TEAM
+========================= -->
+
+    <section id="team" class="team-section">
+
+        <div class="container">
+
+            <div class="section-label">
+                The People Behind the Work
+            </div>
+
+            <h2 class="section-title">
+                Research is a team sport
+            </h2>
+
+            <p class="team-intro">
+                A publication may appear as a list of authors, but behind every
+                paper are countless conversations, reviews, disagreements,
+                experiments, interviews, revisions, and moments of encouragement.
+            </p>
+
+
+            <div class="mentor-card">
+
+                <h3>
+                    Professor Blase Ur
+                </h3>
+
+                <p>
+                    I am especially grateful to Professor Blase Ur for his
+                    mentorship throughout this project. His approach to asking
+                    thoughtful questions, challenging assumptions, emphasizing
+                    rigor, and keeping users at the center of the research
+                    taught me lessons that extend far beyond this paper.
+                </p>
+
+            </div>
+
+
+            <div class="mentor-card">
+
+                <h3>
+                    The SUPERgroup
+                </h3>
+
+                <p>
+                    I am equally thankful to the entire SUPERgroup. Every
+                    brainstorming session, paper review, discussion, critique,
+                    and suggestion helped make this work stronger. Being part
+                    of a research community where ideas are challenged
+                    constructively has been one of the most valuable parts
+                    of this journey.
+                </p>
+
+            </div>
+
+
+            <!--
+            ADD THE ACTUAL AUTHORS HERE
+
+            Example:
+
+            <div class="mentor-card">
+                <h3>
+                    Authors
+                </h3>
+
+                <p>
+                    Author 1 · Author 2 · Author 3 · Wilson Rutaremara
+                </p>
+            </div>
+        -->
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     PERSONAL REFLECTION
+========================= -->
+
+    <section id="reflection" class="reflection">
+
+        <div class="container">
+
+            <div class="section-label">
+                Personal Reflection
+            </div>
+
+            <h2 class="section-title">
+                What this project taught me
+            </h2>
+
+
+            <div class="reflection-box">
+
+                <p>
+                    This project changed the way I think about cybersecurity
+                    research.
+                </p>
+
+                <div class="quote">
+                    Great security research begins by understanding real people.
+                </div>
+
+                <p>
+                    I learned that research requires humility. We have to be
+                    willing to question our assumptions, listen to users, accept
+                    criticism, and continuously improve our ideas.
+                </p>
+
+                <p>
+                    I also learned that writing is part of research. Every
+                    revision forced us to clarify our thinking and communicate
+                    our contribution more precisely.
+                </p>
+
+                <p>
+                    Most importantly, this experience strengthened my belief
+                    that important cybersecurity research can emerge from
+                    Africa and contribute to the global security community.
+                </p>
+
+                <a href="#" class="btn" style="
+                    background: var(--primary);
+                    color: white;
+                    margin-top: 10px;
+                ">
+                    Read the Full Reflection →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     RESOURCES
+========================= -->
+
+    <section id="resources">
+
+        <div class="container">
+
+            <div class="section-label">
+                Explore the Work
+            </div>
+
+            <h2 class="section-title">
+                Paper & Resources
+            </h2>
+
+
+            <div class="resources">
+
+                <a href="#" class="resource" target="_blank">
+
+                    <div class="resource-icon">
+                        📄
+                    </div>
+
+                    <h3>
+                        Read the Paper
+                    </h3>
+
+                    <p>
+                        Read the full research paper published at USENIX Security.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="resource" target="_blank">
+
+                    <div class="resource-icon">
+                        🎤
+                    </div>
+
+                    <h3>
+                        Presentation
+                    </h3>
+
+                    <p>
+                        View the presentation and talk associated with the paper.
+                    </p>
+
+                </a>
+
+
+                <a href="#" class="resource" target="_blank">
+
+                    <div class="resource-icon">
+                        📝
+                    </div>
+
+                    <h3>
+                        Research Reflection
+                    </h3>
+
+                    <p>
+                        Read my personal reflection on the research journey.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+
+                <div class="footer-title">
+                    Wilson Rutaremara
+                </div>
+
+                <p>
+                    Cybersecurity · Usable Security · Human-Centered Research
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <p>
+                    Research conducted with the SUPERgroup
+                    and Carnegie Mellon University Africa.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
