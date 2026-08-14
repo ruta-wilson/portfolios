@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet">
+
     <!-- Favicons -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon_io/android-chrome-192x192.png">
@@ -726,31 +736,31 @@
     <!-- =========================
      NAVIGATION
 ========================= -->
-
-    <nav>
-        <div class="nav-container">
-            <nav>
+<nav id="navmenu" class="navmenu">
                 <div class="nav-container">
 
                     <div class="nav-links">
                         <ul style="display: flex; list-style: none; gap: 24px; margin: 0; padding: 0;">
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about.html">About</a></li>
-                            <li><a href="services.html" class="active">My writings</a></li>
+                            <li><a href="my_writings.html" class="active">My writings</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
+    <nav>
+        <div class="nav-container">
+            
         </div>
         <div class="nav-container">
-        <div class="nav-links">
-            <a href="#research">Research</a>
-            <a href="#findings">Findings</a>
-            <a href="#usenix">USENIX</a>
-            <a href="#team">Team</a>
-            <a href="#reflection">Reflection</a>
-            <a href="#resources">Resources</a>
-        </div>
+            <div class="nav-links">
+                <a href="#research">Research</a>
+                <a href="#findings">Findings</a>
+                <a href="#usenix">USENIX</a>
+                <a href="#team">Team</a>
+                <a href="#reflection">Reflection</a>
+                <a href="#resources">Resources</a>
+            </div>
 
         </div>
     </nav>
@@ -775,7 +785,7 @@
                 </span>
 
                 <span class="badge award">
-                    🏆 Distinguished Paper Award
+                    <a href="./assets/img/Distinguished paper.pdf" target="_blank">🏆 Distinguished Paper Award</a>
                 </span>
 
             </div>
